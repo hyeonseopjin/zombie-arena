@@ -258,14 +258,20 @@ int main()
     textZombie.setFillColor(Color::White);
     textZombie.setPosition(1650, 1000);
 
+    // 확인용 체력
+    Text textHP;
+    textHP.setFont(fontZombie);
+    textHP.setString("HP : 100");
+    textHP.setCharacterSize(50);
+    textHP.setFillColor(Color::White);
+    textHP.setPosition(400, 900);
+
     // 체력 바
     RectangleShape HpBar;
     float HpBarWidth = 300;
     float HpBarHeight = 40;
 
-    int hit = 50;
-
-    Vector2f HpBarSize = Vector2f(HpBarWidth - hit, HpBarHeight);
+    Vector2f HpBarSize = Vector2f(HpBarWidth, HpBarHeight);
     HpBar.setSize(HpBarSize);
     HpBar.setPosition(400, 1000);
     HpBar.setFillColor(Color::Red);
@@ -398,10 +404,6 @@ int main()
             ammoPickup.Update(dt.asSeconds());
             healthPickup.Update(dt.asSeconds());
 
-            stringstream C;
-            C << player.GetClip() << " / " << player.GetClipSum();
-            textBullet.setString(C.str());
-
             // 충돌처리(Collision)
             player.UpdateCollision(zombies);
             for (auto zombie : zombies)
@@ -418,6 +420,11 @@ int main()
             /// String 구현
             /// </summary>
             /// <returns></returns>
+
+
+            stringstream C;
+            C << player.GetClip() << " / " << player.GetClipSum();
+            textBullet.setString(C.str());
 
             int score = 5;
             stringstream upScore;
@@ -441,6 +448,16 @@ int main()
             stringstream ZN;
             ZN << "Zombie = " << zombiesCount;
             textZombie.setString(ZN.str());
+
+            stringstream HH;
+            HH << "HP : " << player.GetHealth();
+            textHP.setString(HH.str());
+
+            HpBarWidth = 300 * ((float)player.GetHealth() / player.GetMaxHealth());
+            Vector2f HpBarSize = Vector2f(HpBarWidth, HpBarHeight);
+            HpBar.setSize(HpBarSize);
+
+
 
             // Draw
             window.clear();
@@ -475,6 +492,8 @@ int main()
             window.draw(textZombie);
             window.draw(textBullet);
             
+            window.draw(textHP);
+
             window.draw(test);
         }
         else if (gameClear)

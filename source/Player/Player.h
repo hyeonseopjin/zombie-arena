@@ -93,4 +93,9 @@ public:
 
     void UpgradeSpeed();
     void UpgradeMaxHealth();
+
+
+    //¿Á»÷ √ﬂ∞°
+    int GetHealth();
+    int GetMaxHealth();
 };

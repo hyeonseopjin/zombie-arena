@@ -250,12 +250,15 @@ bool Player::UpdateCollision(const std::list<Pickup*>& items)
 			case PickupTypes::Ammo:
 				if (item->GetEarnIt())
 				{
-					haveAmmo += item->GotIt();
+					curClip += item->GotIt();
+					//curClip += 10;
+					//haveAmmo += item->GotIt();
 				}
 				break;
 			case PickupTypes::Health:
 				if (item->GetEarnIt())
 				{
+					//health += 30;
 					health += item->GotIt();
 				}
 				break;
@@ -317,4 +320,14 @@ void Player::UpgradeSpeed()
 void Player::UpgradeMaxHealth()
 {
 	maxHealth += START_HEALTH * 0.2f;
+}
+
+int Player::GetHealth()
+{
+	return health;
+}
+
+int Player::GetMaxHealth()
+{
+	return maxHealth;
 }
