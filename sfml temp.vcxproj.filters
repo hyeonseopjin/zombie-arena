@@ -1,0 +1,110 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup>
+    <Filter Include="리소스 파일">
+      <UniqueIdentifier>{67DA6AB6-F800-4c08-8B7A-83BB121AAD01}</UniqueIdentifier>
+      <Extensions>rc;ico;cur;bmp;dlg;rc2;rct;bin;rgs;gif;jpg;jpeg;jpe;resx;tiff;tif;png;wav;mfcribbon-ms</Extensions>
+    </Filter>
+    <Filter Include="Player">
+      <UniqueIdentifier>{eb5b04c9-4afe-43ac-9c49-5849d52eca82}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Utils">
+      <UniqueIdentifier>{86d0a9a1-b9a1-4439-ac46-f2c75e86e77d}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Zombie">
+      <UniqueIdentifier>{ab882866-06f4-4fbe-a7d3-b06a5cc83db0}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="UI">
+      <UniqueIdentifier>{fb8f96da-b504-4bcb-82f1-113b1e80553a}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Scene">
+      <UniqueIdentifier>{7a708e86-6ca5-41db-bfde-20147be96626}</UniqueIdentifier>
+    </Filter>
+  </ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="zombie-arena.cpp" />
+    <ClCompile Include="source\Utils\Utils.cpp">
+      <Filter>Utils</Filter>
+    </ClCompile>
+    <ClCompile Include="source\Player\Player.cpp">
+      <Filter>Player</Filter>
+    </ClCompile>
+    <ClCompile Include="source\Utils\InputMgr.cpp">
+      <Filter>Utils</Filter>
+    </ClCompile>
+    <ClCompile Include="source\Utils\TextureHorder.cpp">
+      <Filter>Utils</Filter>
+    </ClCompile>
+    <ClCompile Include="Zombie.cpp">
+      <Filter>Zombie</Filter>
+    </ClCompile>
+    <ClCompile Include="source\Player\Bullet.cpp">
+      <Filter>Player</Filter>
+    </ClCompile>
+    <ClCompile Include="source\Player\Pickup.cpp">
+      <Filter>Player</Filter>
+    </ClCompile>
+    <ClCompile Include="source\UI\UI.cpp">
+      <Filter>UI</Filter>
+    </ClCompile>
+    <ClCompile Include="source\UI\UIMgr.cpp">
+      <Filter>UI</Filter>
+    </ClCompile>
+    <ClCompile Include="source\Scenes\Scene.cpp">
+      <Filter>Scene</Filter>
+    </ClCompile>
+    <ClCompile Include="source\Scenes\SceneMgr.cpp">
+      <Filter>Scene</Filter>
+    </ClCompile>
+    <ClCompile Include="source\Scenes\SceneTitle.cpp">
+      <Filter>Scene</Filter>
+    </ClCompile>
+    <ClCompile Include="ReloadBar.cpp">
+      <Filter>Player</Filter>
+    </ClCompile>
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="source\Utils\Utils.h">
+      <Filter>Utils</Filter>
+    </ClInclude>
+    <ClInclude Include="source\Player\Player.h">
+      <Filter>Player</Filter>
+    </ClInclude>
+    <ClInclude Include="source\Utils\InputMgr.h">
+      <Filter>Utils</Filter>
+    </ClInclude>
+    <ClInclude Include="source\Utils\TextureHorder.h">
+      <Filter>Utils</Filter>
+    </ClInclude>
+    <ClInclude Include="source\Zombie\Zombie.h">
+      <Filter>Zombie</Filter>
+    </ClInclude>
+    <ClInclude Include="source\Player\Bullet.h">
+      <Filter>Player</Filter>
+    </ClInclude>
+    <ClInclude Include="source\Player\Pickup.h">
+      <Filter>Player</Filter>
+    </ClInclude>
+    <ClInclude Include="source\UI\Singleton.h">
+      <Filter>UI</Filter>
+    </ClInclude>
+    <ClInclude Include="source\UI\UI.h">
+      <Filter>UI</Filter>
+    </ClInclude>
+    <ClInclude Include="source\UI\UIMgr.h">
+      <Filter>UI</Filter>
+    </ClInclude>
+    <ClInclude Include="source\Scenes\Scene.h">
+      <Filter>Scene</Filter>
+    </ClInclude>
+    <ClInclude Include="source\Scenes\SceneMgr.h">
+      <Filter>Scene</Filter>
+    </ClInclude>
+    <ClInclude Include="source\Scenes\SceneTitle.h">
+      <Filter>Scene</Filter>
+    </ClInclude>
+    <ClInclude Include="source\Player\ReloadBar.h">
+      <Filter>Player</Filter>
+    </ClInclude>
+  </ItemGroup>
+</Project>
