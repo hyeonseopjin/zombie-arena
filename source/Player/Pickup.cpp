@@ -54,7 +54,6 @@ void Pickup::Spawn(bool spawn)
 
 int Pickup::GotIt()
 {
-    earnIt = false;
     return value;
 }
 
@@ -86,4 +85,20 @@ PickupTypes Pickup::GetType()
 bool Pickup::GetEarnIt() const
 {
     return earnIt;
+}
+
+void Pickup::SetHealthValue()
+{
+    HEALTH_START_VALUE += 100;
+}
+
+void Pickup::SetAmmoValue()
+{
+    AMMO_START_VALUE += 20;
+}
+
+// ¿Á»÷ √ﬂ∞°
+void Pickup::SetEarnIt()
+{
+    earnIt = false;
 }

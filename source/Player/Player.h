@@ -98,4 +98,10 @@ public:
     //¿Á»÷ √ﬂ∞°
     int GetHealth();
     int GetMaxHealth();
+
+    void SetHealth();
+    void SetMaxHealth();
+    void SetSpeed();
+
+
 };

@@ -29,15 +29,7 @@ void ReloadBar::Reload(float dt)
     }
 }
 
-bool ReloadBar::Shoot()
-{
-    if (leftBullet > 0)
-    {
-        --leftBullet;
-        return true;
-    }
-    return false;
-}
+
 
 RectangleShape& ReloadBar::GetShape()
 {

@@ -12,8 +12,8 @@ enum class PickupTypes
 class Pickup
 {
 private:
-    const int HEALTH_START_VALUE = 50;
-    const int AMMO_START_VALUE = 12;
+    int HEALTH_START_VALUE = 50;
+    int AMMO_START_VALUE = 12;
     const float START_WAIT_TIME = 10.f;
     const float START_CECONDS_FOR_LIVE = 5.f;
 
@@ -43,4 +43,9 @@ public:
     PickupTypes GetType();
 
     bool GetEarnIt() const;
+
+    void SetHealthValue();
+    void SetAmmoValue();
+
+    void SetEarnIt();
 };

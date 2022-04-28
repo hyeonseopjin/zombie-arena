@@ -12,8 +12,6 @@
 
 using namespace std;
 
-
-
 // VertexArray: 즉 맵 타일 그리는 함수
 int CreateBackground(VertexArray& va, IntRect arena)
 {
@@ -42,9 +40,7 @@ int CreateBackground(VertexArray& va, IntRect arena)
             va[vertexIndex + 1].position = Vector2f(x + TILE_SIZE, y);
             va[vertexIndex + 2].position = Vector2f(x + TILE_SIZE, y + TILE_SIZE);
             va[vertexIndex + 3].position = Vector2f(x, y + TILE_SIZE);
-
-
-            
+          
             int  texIndex = Utils::RandomRange(0, TILE_TYPES);
             if (r == 0 || r == rows - 1 || c == 0 || c == cols - 1)
             {
@@ -313,7 +309,7 @@ int main()
     std::vector<Zombie*> zombies;
     int zombiesCount = 10;
     CreateZombies(zombies, zombiesCount, arena);
-
+   
     Clock clock;
     Time playTime;
 
@@ -421,12 +417,11 @@ int main()
             /// </summary>
             /// <returns></returns>
 
-
             stringstream C;
             C << player.GetClip() << " / " << player.GetClipSum();
             textBullet.setString(C.str());
 
-            int score = 5;
+            int score = 0;
             stringstream upScore;
             upScore << "Score = " << score;
             textScore.setString(upScore.str());
@@ -456,7 +451,6 @@ int main()
             HpBarWidth = 300 * ((float)player.GetHealth() / player.GetMaxHealth());
             Vector2f HpBarSize = Vector2f(HpBarWidth, HpBarHeight);
             HpBar.setSize(HpBarSize);
-
 
 
             // Draw
@@ -542,6 +536,9 @@ int main()
                 if (Mouse::isButtonPressed(Mouse::Button::Left))
                 {
                     gameClear = false;
+
+                    player.SetHealth();
+                    player.SetMaxHealth();
                 }
             }
             else
@@ -556,6 +553,7 @@ int main()
                 if (Mouse::isButtonPressed(Mouse::Button::Left))
                 {
                     gameClear = false;
+                    player.SetSpeed();
                 }
             }
             else
@@ -569,7 +567,8 @@ int main()
                 textIncHealPick.setFillColor(Color::Red);
                 if (Mouse::isButtonPressed(Mouse::Button::Left))
                 {
-                    gameClear = false;
+                    gameClear = false;                  
+                    healthPickup.SetHealthValue();
                 }
             }
             else
@@ -584,6 +583,8 @@ int main()
                 if (Mouse::isButtonPressed(Mouse::Button::Left))
                 {
                     gameClear = false;
+                    ammoPickup.SetAmmoValue();
+
                 }
             }
             else

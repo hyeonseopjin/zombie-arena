@@ -242,15 +242,23 @@ bool Player::UpdateCollision(const std::list<Pickup*>& items)
 	{
 		if (bounds.intersects(item->GetGlobalBounds()))
 		{
+			cout << item->GetEarnIt() << endl;
 
 			item->GotIt();
 			isCollided = true;
+
+			/*if (item->GetType() == PickupTypes::Ammo && item->GetEarnIt())
+			{
+				curClip += item->GotIt();
+			}*/
+
 			switch (item->GetType())
 			{
 			case PickupTypes::Ammo:
 				if (item->GetEarnIt())
 				{
 					curClip += item->GotIt();
+					item->SetEarnIt();
 					//curClip += 10;
 					//haveAmmo += item->GotIt();
 				}
@@ -260,6 +268,12 @@ bool Player::UpdateCollision(const std::list<Pickup*>& items)
 				{
 					//health += 30;
 					health += item->GotIt();
+					if (health > maxHealth)
+					{
+						health = maxHealth;
+					}
+					item->SetEarnIt();
+
 				}
 				break;
 			default:
@@ -330,4 +344,19 @@ int Player::GetHealth()
 int Player::GetMaxHealth()
 {
 	return maxHealth;
+}
+
+void Player::SetHealth()
+{
+	health += 20;
+}
+
+void Player::SetMaxHealth()
+{
+	maxHealth += 20;
+}
+
+void Player::SetSpeed()
+{
+	speed += 1000;
 }

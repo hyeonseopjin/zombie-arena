@@ -16,7 +16,7 @@ public:
     ReloadBar();
     void Update(Vector2f playerPos, float dt);
     void Reload(float dt);
-    bool Shoot();
+    
 
     RectangleShape& GetShape();
 
