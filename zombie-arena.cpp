@@ -294,6 +294,7 @@ int main()
     arena.width = 1000;
     arena.height = 1000;
 
+ 
     Pickup ammoPickup(PickupTypes::Ammo);
     Pickup healthPickup(PickupTypes::Health);
     ammoPickup.SetArena(arena);
@@ -451,7 +452,12 @@ int main()
             HpBarWidth = 300 * ((float)player.GetHealth() / player.GetMaxHealth());
             Vector2f HpBarSize = Vector2f(HpBarWidth, HpBarHeight);
             HpBar.setSize(HpBarSize);
-
+            if (HpBarWidth < 0)
+            {
+                IsPause = false;
+                gameStart = false;
+                playerDie = true;
+            }
 
             // Draw
             window.clear();
@@ -584,7 +590,6 @@ int main()
                 {
                     gameClear = false;
                     ammoPickup.SetAmmoValue();
-
                 }
             }
             else
@@ -615,8 +620,16 @@ int main()
             gameStart = false;
             if (Keyboard::isKeyPressed(Keyboard::Return))
             {
+                if (Keyboard::isKeyPressed(Keyboard::Return))
+                {
+                    player.InitHealth();
+                    IsPause = true;
+                    gameStart = true;
+                    playerDie = false;
+                }
                 gameStart = true;
             }
+
         }
         else
         {

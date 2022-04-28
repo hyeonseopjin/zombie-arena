@@ -3,6 +3,10 @@
 #include "../Utils/Utils.h"
 #include <iostream>
 
+Pickup::Pickup() : HEALTH_START_VALUE(50), AMMO_START_VALUE(12)
+{
+}
+
 Pickup::Pickup(PickupTypes type) : type(type)
 {
     std::string textureID;
@@ -54,6 +58,7 @@ void Pickup::Spawn(bool spawn)
 
 int Pickup::GotIt()
 {
+
     return value;
 }
 

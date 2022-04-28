@@ -103,5 +103,7 @@ public:
     void SetMaxHealth();
     void SetSpeed();
 
+    void InitHealth();
+
 
 };

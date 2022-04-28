@@ -13,7 +13,7 @@ class Pickup
 {
 private:
     int HEALTH_START_VALUE = 50;
-    int AMMO_START_VALUE = 12;
+    int AMMO_START_VALUE = 10;
     const float START_WAIT_TIME = 10.f;
     const float START_CECONDS_FOR_LIVE = 5.f;
 
@@ -29,6 +29,7 @@ private:
     float timer;
 
 public:
+    Pickup();
     Pickup(PickupTypes type);
 
     void Update(float dt);

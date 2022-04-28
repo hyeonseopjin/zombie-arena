@@ -360,3 +360,8 @@ void Player::SetSpeed()
 {
 	speed += 1000;
 }
+
+void Player::InitHealth()
+{
+	health = 100;
+}
